@@ -168,3 +168,63 @@
   object-fit:contain !important;
   object-position:center !important;
 }
+
+/* FINAL DIRECTORY LAYOUT FIX
+   Cards use a fixed preview window with object-fit: contain so the complete
+   source photo is visible instead of becoming a giant/cropped image. */
+.profiles.directory{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:18px !important;
+  align-items:start !important;
+}
+.profiles.directory .person{
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+  overflow:hidden !important;
+}
+.profiles.directory .person img{
+  display:block !important;
+  width:100% !important;
+  height:300px !important;
+  max-height:300px !important;
+  min-height:0 !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  background:#080808 !important;
+}
+.profiles.directory .warning{
+  margin:0 !important;
+}
+@media(max-width:850px){
+  .profiles.directory{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px !important;
+  }
+  .profiles.directory .person img{
+    height:250px !important;
+    max-height:250px !important;
+  }
+}
+@media(max-width:480px){
+  .profiles.directory{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:9px !important;
+  }
+  .profiles.directory .person img{
+    height:235px !important;
+    max-height:235px !important;
+  }
+  .profiles.directory .person div{
+    padding:10px !important;
+  }
+  .profiles.directory .person b{
+    font-size:12px !important;
+    line-height:1.15 !important;
+  }
+  .profiles.directory .person span{
+    font-size:10px !important;
+  }
+}
