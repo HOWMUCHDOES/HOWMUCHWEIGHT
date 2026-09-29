@@ -175,3 +175,6 @@
 .home-profiles .person,.directory .person{height:auto!important;display:block!important}
 @media(max-width:750px){.home-profiles,.directory{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.home-profiles .person img,.directory .person img{height:auto!important;max-height:none!important;object-fit:contain!important}.home-profiles .person div,.directory .person div{padding:10px!important}.home-profiles .person b,.directory .person b{font-size:12px!important}.home-profiles .person span,.directory .person span{font-size:10px!important}}
 @media(max-width:430px){.home-profiles,.directory{grid-template-columns:1fr 1fr!important}}
+
+.theme-song audio{width:100%;margin-top:12px;}
+.theme-song strong{display:block;}
