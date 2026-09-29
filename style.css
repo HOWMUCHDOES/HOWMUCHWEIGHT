@@ -178,3 +178,15 @@
 
 .theme-song audio{width:100%;margin-top:12px;}
 .theme-song strong{display:block;}
+
+
+/* Competition countdown */
+.competition-countdown{max-width:900px;margin:0 auto 30px;padding:24px;background:#111;border:1px solid #292929;border-radius:22px;text-align:center}
+.countdown-label{display:inline-block;color:#111;background:#ffcf00;padding:7px 11px;border-radius:999px;font-size:9px;font-weight:950;letter-spacing:.13em}
+.competition-countdown h2{margin:15px 0 18px;font-size:clamp(22px,4vw,38px);letter-spacing:-.05em;line-height:1}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.countdown-unit{background:#080808;border:1px solid #292929;border-radius:15px;padding:16px 8px}
+.countdown-unit strong{display:block;color:#ff3944;font-size:clamp(30px,6vw,58px);line-height:.9;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.countdown-unit span{display:block;color:#666;font-size:8px;font-weight:950;letter-spacing:.12em;margin-top:9px}
+.countdown-date{margin:16px 0 0;color:#666;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:500px){.competition-countdown{padding:18px 12px}.countdown-grid{gap:6px}.countdown-unit{padding:13px 5px}.countdown-unit strong{font-size:30px}.countdown-unit span{font-size:7px}}

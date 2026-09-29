@@ -11,6 +11,18 @@
 <div class="tag">⚠ OFFICIAL DATABASE</div><h1>FAT FUCKS<br><em>DATABASE</em></h1><p>Extremely serious statistics. Probably.</p>
 </header>
 <main>
+<section class="competition-countdown" aria-labelledby="competition-title">
+  <div class="countdown-label">🏆 COMPETITION COUNTDOWN</div>
+  <h2 id="competition-title">32 DAYS UNTIL THE COMPETITION</h2>
+  <div class="countdown-grid" aria-live="polite">
+    <div class="countdown-unit"><strong id="cd-days">32</strong><span>DAYS</span></div>
+    <div class="countdown-unit"><strong id="cd-hours">00</strong><span>HOURS</span></div>
+    <div class="countdown-unit"><strong id="cd-minutes">00</strong><span>MINUTES</span></div>
+    <div class="countdown-unit"><strong id="cd-seconds">00</strong><span>SECONDS</span></div>
+  </div>
+  <p class="countdown-date">Competition: October 31, 2026</p>
+</section>
+
 <section class="home-feature">
 <a href="people.html" class="feature-link"><span class="feature-icon">👥</span><span><b>Fattys</b><small>View all profiles &amp; stats</small></span><span>→</span></a>
 <a href="leaderboard.html" class="feature-link"><span class="feature-icon">🏆</span><span><b>Leaderboard</b><small>See the current rankings</small></span><span>→</span></a>
@@ -26,4 +38,31 @@
 <a class="person" href="luis.html"><img src="luis.jpeg" alt="Luis"><div><b>Luis</b><span>140 LB</span></div></a>
 <a class="person" href="bishal.html"><img src="bishal.jpeg" alt="Bishal"><div><b>Bishal</b><span>115 LB</span></div></a>
 </section></main><footer>Database status: unnecessarily accurate</footer>
+<script>
+(function(){
+  const target = new Date('2026-10-31T23:59:59');
+  const days = document.getElementById('cd-days');
+  const hours = document.getElementById('cd-hours');
+  const minutes = document.getElementById('cd-minutes');
+  const seconds = document.getElementById('cd-seconds');
+  const title = document.getElementById('competition-title');
+  if (!days || !hours || !minutes || !seconds || !title) return;
+
+  function update(){
+    const remaining = Math.max(0, target.getTime() - Date.now());
+    const totalSeconds = Math.floor(remaining / 1000);
+    const d = Math.floor(totalSeconds / 86400);
+    const h = Math.floor((totalSeconds % 86400) / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const sec = totalSeconds % 60;
+    days.textContent = String(d);
+    hours.textContent = String(h).padStart(2,'0');
+    minutes.textContent = String(m).padStart(2,'0');
+    seconds.textContent = String(sec).padStart(2,'0');
+    title.textContent = remaining > 0 ? d + (d === 1 ? ' DAY' : ' DAYS') + ' UNTIL THE COMPETITION' : 'THE COMPETITION IS HERE';
+  }
+  update();
+  setInterval(update, 1000);
+})();
+</script>
 </body></html>
