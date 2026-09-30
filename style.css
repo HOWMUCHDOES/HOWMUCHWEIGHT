@@ -190,3 +190,25 @@
 .countdown-unit span{display:block;color:#666;font-size:8px;font-weight:950;letter-spacing:.12em;margin-top:9px}
 .countdown-date{margin:16px 0 0;color:#666;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:500px){.competition-countdown{padding:18px 12px}.countdown-grid{gap:6px}.countdown-unit{padding:13px 5px}.countdown-unit strong{font-size:30px}.countdown-unit span{font-size:7px}}
+
+/* Leaderboard layout fix: keep every person, name, rank and weight inside the row. */
+.leader-row{grid-template-columns:58px 92px minmax(0,1fr) max-content;}
+.leader-name{min-width:0;overflow:hidden;}
+.leader-name b{overflow-wrap:anywhere;word-break:normal;}
+.leader-row>strong{justify-self:end;}
+
+@media(max-width:650px){
+  .leader-row{grid-template-columns:34px 82px minmax(0,1fr) max-content;gap:9px;padding:8px 10px 8px 6px;min-height:88px;}
+  .leader-name{min-width:0;}
+  .leader-name b{font-size:13px;line-height:1.15;overflow-wrap:anywhere;}
+  .leader-name small{font-size:8px;}
+  .leader-row>strong{font-size:12px;white-space:nowrap;}
+}
+
+@media(max-width:390px){
+  .leader-row{grid-template-columns:27px 68px minmax(0,1fr) max-content;gap:7px;}
+  .leader-photo{width:68px;height:65px;}
+  .leader-name b{font-size:11px;}
+  .leader-row>strong{font-size:10px;}
+  .place{font-size:15px;}
+}
